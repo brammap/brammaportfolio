@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bramma Sakthi | Product Manager & Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 500;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: 1px solid;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0f172a;
+            border-color: #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .hero-image {
+            border-radius: 12px;
+            height: 500px;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+        }
+
+        /* ABOUT */
+        .about-content {
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .about-content h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .project-card {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 40px;
+        }
+
+        .project-card h3 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .project-section {
+            margin-bottom: 32px;
+        }
+
+        .project-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-section p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f4f8;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* PROCESS */
+        .process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+        .contact-content {
+            max-width: 600px;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 12px 24px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #1e40af;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 40px 48px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            section {
+                padding: 60px 24px;
+            }
+
+            .navbar {
+                padding: 16px 24px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 24px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="#" class="logo">Bramma</a>
+    <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div>
+        <h1>I build products that turn messy workflows into scalable systems</h1>
+        <p>I identify real operational problems, design structured solutions, and ship tools that drive measurable impact.</p>
+        <div class="cta-buttons">
+            <a href="#work" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="images/Profile_pic_professional.jpg" alt="Bramma Sakthi">
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <div class="section-header">
+        <h2>About</h2>
+    </div>
+    <div class="about-content">
+        <h3>Hello, I'm Sakthi</h3>
+        <p>A product-minded builder focused on workflows, systems, and real-world execution.</p>
+        
+        <div style="margin-top: 32px;">
+            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Builder</h4>
+            <p>I design and build systems that turn manual processes into structured, scalable solutions.</p>
+        </div>
+        
+        <div style="margin-top: 24px;">
+            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Bridge</h4>
+            <p>I work across operations, business, and engineering to connect problems with practical solutions.</p>
+        </div>
+        
+        <div style="margin-top: 24px;">
+            <h4 style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Craft</h4>
+            <p>I focus on making systems simple, reliable, and usable — so teams actually adopt them in their day-to-day work.</p>
+        </div>
+    </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section id="intro" style="background: #f8f9fa; padding: 100px 48px;">
+    <div class="section-header">
+        <h2>How I Work</h2>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+        <div>
+            <h4 style="font-size: 18px; font-weight: 500; margin-bottom: 12px; color: #0f172a;">Builder</h4>
+            <p style="font-size: 15px; color: #475569; line-height: 1.8;">I design and build systems that turn manual processes into structured, scalable solutions.</p>
+        </div>
+        <div>
+            <h4 style="font-size: 18px; font-weight: 500; margin-bottom: 12px; color: #0f172a;">Bridge</h4>
+            <p style="font-size: 15px; color: #475569; line-height: 1.8;">I work across operations, business, and engineering to connect problems with practical solutions.</p>
+        </div>
+        <div>
+            <h4 style="font-size: 18px; font-weight: 500; margin-bottom: 12px; color: #0f172a;">Craft</h4>
+            <p style="font-size: 15px; color: #475569; line-height: 1.8;">I focus on making systems simple, reliable, and usable — so teams actually adopt them.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WORK SECTION -->
+<section id="work">
+    <div class="section-header">
+        <h2>Work</h2>
+        <p>Projects that prove what shipping real solutions looks like</p>
+    </div>
+
+    <div class="projects-grid">
+        <!-- PROJECT 1: DUTY DRAWBACK -->
+        <div class="project-card">
+            <h3>Duty Drawback Claims Automation</h3>
+            <div class="project-meta">
+                <span>TCCI Manufacturing</span>
+                <span>$700K Impact</span>
+            </div>
+            <div class="project-image">
+                <img src="images/duty-drawback.jpg" alt="Duty Drawback Project">
+            </div>
+            <div class="project-section">
+                <h4>The Problem</h4>
+                <p>Finance team had years of import/export data scattered across folders with no centralized system. They wanted to "automate duty drawback claims," but the real bottleneck wasn't filing—it was that nobody had ever organized the underlying data. $700K in eligible refunds were sitting there, unclaimed.</p>
+            </div>
+            <div class="project-section">
+                <h4>What I Did</h4>
+                <p>I designed a 4-stage data pipeline: OCR extraction of documents, standardized data formatting, Python-based cleaning and validation, and automated government submission workflows. By understanding the real problem first, I built a solution that unlocked $700K in recovered value.</p>
+            </div>
+            <div class="project-section">
+                <h4>Impact</h4>
+                <p>Finance team recovered the first-ever duty drawback claims. Process is now scalable across multiple countries, time periods, and shipment volumes. This isn't just a one-time win—it's a repeatable system.</p>
+            </div>
+        </div>
+
+        <!-- PROJECT 2: WORK ORDER MANAGEMENT -->
+        <div class="project-card">
+            <h3>Work Order Management System</h3>
+            <div class="project-meta">
+                <span>TCCI Manufacturing</span>
+                <span>60% Faster Approvals</span>
+            </div>
+            <div class="project-image">
+                <img src="images/work-order.jpg" alt="Work Order Project">
+            </div>
+            <div class="project-section">
+                <h4>The Problem</h4>
+                <p>Work requests were managed through manual entries in Microsoft Planner with no standardized format. Management had zero visibility, approvals were informal, and approval-to-execution took 3-5 days. Teams were frustrated. Leadership was blind.</p>
+            </div>
+            <div class="project-section">
+                <h4>What I Did</h4>
+                <p>I listened to operations, lab, quality, and management teams. The issue wasn't Planner—it was the lack of a control layer governing intake, approvals, and scheduling. I designed a workflow-driven system using Power Apps, SharePoint, and Power Automate that created structured intake, approval gates, and real-time management visibility.</p>
+            </div>
+            <div class="project-section">
+                <h4>Impact</h4>
+                <p>Approval-to-scheduling time reduced from 3-5 days to 1-2 days (60% faster). Manual status updates reduced by 80%. Real-time management visibility without relying on manual follow-ups.</p>
+            </div>
+        </div>
+
+        <!-- PROJECT 3: TRAJECTORY -->
+        <div class="project-card">
+            <h3>Trajectory – Mentor-Mentee Matching</h3>
+            <div class="project-meta">
+                <span>Women in Product Hackathon</span>
+                <span>🏆 Winner</span>
+            </div>
+            <div class="project-image">
+                <img src="images/trajectory.jpg" alt="Trajectory Project">
+            </div>
+            <div class="project-section">
+                <h4>The Problem</h4>
+                <p>Existing mentorship platforms match based on surface-level criteria (industry, company) while ignoring what actually determines good mentorship: aligned career goals, compatible experience levels, and relevant domain expertise.</p>
+            </div>
+            <div class="project-section">
+                <h4>What I Did</h4>
+                <p>I conducted user research with 10+ mentors and mentees to understand what actually matters. Then I designed a matching framework that asks the right questions and builds connections on real compatibility. Built a functional prototype in one week under hackathon pressure.</p>
+            </div>
+            <div class="project-section">
+                <h4>Impact</h4>
+                <p>Selected as hackathon winner from competitive field. Chosen for community implementation. This proved that thoughtful product thinking beats features shipped.</p>
+            </div>
+        </div>
+
+        <!-- PROJECT 4: OPERATIONS DIGITIZATION PLATFORM -->
+        <div class="project-card">
+            <h3>Operations Digitization Platform</h3>
+            <div class="project-meta">
+                <span>TCCI Manufacturing</span>
+                <span>80% Process Digitization</span>
+            </div>
+            <div class="project-image">
+                <img src="images/operations-digitization.jpg" alt="Operations Digitization">
+            </div>
+            <div class="project-section">
+                <h4>The Problem</h4>
+                <p>Operational workflows across production, quality, and warehouse teams were manual and paper-based. Teams relied on check-sheets, Excel files, and ad-hoc tracking, leading to fragmented data, delayed reporting, and heavy dependency on manual follow-ups. Management lacked real-time visibility into operations.</p>
+            </div>
+            <div class="project-section">
+                <h4>What I Did</h4>
+                <p>Worked with stakeholders across production, quality, and warehouse teams to understand how workflows operated and identify inefficiencies. Designed a structured approach to standardize data capture and workflow management. Built multiple applications using Power Apps with SharePoint as the data layer and Power Automate for workflow automation.</p>
+            </div>
+            <div class="project-section">
+                <h4>Impact</h4>
+                <p>Digitized over 80% of operational processes across multiple teams. Reduced manual effort and improved data consistency. Enabled real-time visibility into operations without relying on manual updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROCESS SECTION -->
+    <div style="margin-top: 100px;">
+        <div class="section-header">
+            <h2>My Process</h2>
+            <p>How I approach every project</p>
+        </div>
+        <div class="process">
+            <div class="process-step">
+                <h4>1. Listen</h4>
+                <p>Ask hard questions. Understand what's actually broken, not what people say is broken.</p>
+            </div>
+            <div class="process-step">
+                <h4>2. Diagnose</h4>
+                <p>Find the real bottleneck. Often it's not what you think it is.</p>
+            </div>
+            <div class="process-step">
+                <h4>3. Design</h4>
+                <p>Create solutions that bridge technical constraints with business needs.</p>
+            </div>
+            <div class="process-step">
+                <h4>4. Ship</h4>
+                <p>Build, iterate, measure impact. A solution that doesn't ship is just a good idea.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ENGAGING CTA SECTION -->
+<section style="text-align: center; padding: 80px 48px;">
+    <h2 style="font-size: 32px; font-weight: 500; margin-bottom: 24px; color: #0f172a;">Well, you made it to the bottom of the page?</h2>
+    <p style="font-size: 18px; color: #64748b; margin-bottom: 40px;">Now you want to click "Hire Me"</p>
+    <a href="#contact" class="btn btn-primary" style="padding: 16px 40px; font-size: 16px;">Let's Work Together</a>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <div class="section-header">
+        <h2>Well, you made it to the bottom of the page</h2>
+        <p style="font-size: 18px; margin-top: 16px;">& now you want to click "Hire Me"</p>
+    </div>
+    <div class="contact-content">
+        <p>I'm actively exploring PM roles where I can combine strategic thinking, user research, and technical execution to create meaningful impact. If you're building something that matters—especially at the intersection of healthcare and AI—let's talk.</p>
+        <div class="contact-links">
+            <a href="mailto:brammasakthipanneer@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/brammasakthi/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/brammap" target="_blank">GitHub</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2025 Bramma Sakthi. Produc

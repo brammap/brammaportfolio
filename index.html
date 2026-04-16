@@ -1,272 +1,915 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bramma Sakthi | Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Sakthi | Product Manager</title>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #fafbfc;
+            background-image: radial-gradient(circle, #d1d5db 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eaeaea;
+        }
 
-<style>
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f172a;
+            text-decoration: none;
+        }
 
-/* ===== BASE ===== */
-* { margin:0; padding:0; box-sizing:border-box; }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
 
-body {
-    font-family:'Inter',sans-serif;
-    background:#ffffff;
-    color:#1e293b;
-}
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-section {
-    padding:6rem 5%;
-}
+        nav a:hover {
+            color: #0f172a;
+        }
 
-/* ===== NAV ===== */
-nav {
-    display:flex;
-    justify-content:space-between;
-    padding:2rem 5%;
-    border-bottom:1px solid #e5e7eb;
-}
+        .cta-button {
+            background: #0f172a;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
 
-nav ul {
-    display:flex;
-    gap:2rem;
-    list-style:none;
-}
+        .cta-button:hover {
+            background: #1e293b;
+        }
 
-nav a {
-    text-decoration:none;
-    font-size:14px;
-    color:#1e293b;
-}
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5%;
+            background: white;
+            text-align: center;
+        }
 
-/* ===== HERO ===== */
-.hero {
-    padding:8rem 5%;
-    text-align:center;
-}
+        .hero-repeating {
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 2rem;
+            opacity: 0.3;
+            line-height: 1.2;
+            display: none;
+        }
 
-.hero-main {
-    font-family:'Lora',serif;
-    font-size:64px;
-    line-height:1.1;
-    max-width:800px;
-    margin:auto;
-}
+        .hero-main {
+            font-family: 'Lora', serif;
+            font-size: 56px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 3rem;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.hero-cta {
-    margin-top:2rem;
-    display:flex;
-    gap:1rem;
-    justify-content:center;
-}
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
 
-.btn-primary {
-    background:#0f172a;
-    color:white;
-    padding:12px 28px;
-    border-radius:25px;
-    border:none;
-}
+        .btn-primary {
+            background: #0f172a;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
 
-.btn-secondary {
-    border:2px solid #0f172a;
-    padding:12px 28px;
-    border-radius:25px;
-}
+        .btn-primary:hover {
+            background: #1e293b;
+        }
 
-/* ===== INTRO ===== */
-.intro-grid {
-    display:grid;
-    grid-template-columns:1fr 260px;
-    gap:4rem;
-    align-items:center;
-}
+        .btn-secondary {
+            background: white;
+            color: #0f172a;
+            padding: 12px 32px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid #0f172a;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
 
-.intro img {
-    width:260px;
-    height:260px;
-    object-fit:cover;
-    border-radius:12px;
-}
+        .btn-secondary:hover {
+            background: #f0f4f8;
+        }
 
-/* ===== TYPOGRAPHY ===== */
-h2 {
-    font-family:'Lora',serif;
-    font-size:42px;
-    margin-bottom:1rem;
-}
+        /* Intro Section */
+        .intro {
+            padding: 4rem 5%;
+            background: white;
+            border-bottom: 1px solid #eaeaea;
+        }
 
-h3 {
-    font-family:'Lora',serif;
-    font-size:18px;
-    margin-top:1.5rem;
-}
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-p {
-    font-size:15px;
-    line-height:1.8;
-    color:#64748b;
-}
+        .intro-text h2 {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            line-height: 1.6;
+        }
 
-/* ===== CAPABILITIES ===== */
-.capabilities-grid {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:3rem;
-}
+        .intro-text h2 strong {
+            font-weight: 600;
+        }
 
-.capability-card {
-    padding:0;
-}
+        .intro-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
 
-/* ===== TESTIMONIAL ===== */
-.testimonial {
-    text-align:center;
-}
+        .intro-card {
+            background: #fafbfc;
+            padding: 2rem;
+            border-left: 4px solid #0f172a;
+        }
 
-.testimonial p {
-    font-family:'Lora',serif;
-    font-size:26px;
-    max-width:700px;
-    margin:auto;
-}
+        .intro-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
 
-/* ===== SOCIAL ===== */
-.social-links {
-    display:flex;
-    justify-content:center;
-    gap:3rem;
-    margin-top:2rem;
-}
+        .intro-card p {
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
 
-.social-links img {
-    width:36px;
-    opacity:0.8;
-    transition:0.2s;
-}
+        .intro-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
 
-.social-links img:hover {
-    transform:scale(1.15);
-    opacity:1;
-}
+        /* Competencies Scroll */
+        .competencies-scroll {
+            padding: 2rem 5%;
+            background: white;
+            overflow: hidden;
+            border-top: 1px solid #d1d5db;
+            border-bottom: 1px solid #d1d5db;
+        }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px) {
-    .hero-main { font-size:36px; }
-    .intro-grid { grid-template-columns:1fr; }
-    .capabilities-grid { grid-template-columns:1fr; }
-}
+        .competencies-wrapper {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll 40s linear infinite;
+        }
 
-</style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .competency-tag {
+            background: #0f172a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .capabilities {
+            padding: 4rem 5%;
+            background: #fafbfc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #5a6c7d;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .capability-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border: 1px solid #d1d5db;
+        }
+
+        .capability-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .capability-card p {
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        /* Works Section */
+        .works {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .work-card {
+            background: #fafbfc;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 2rem;
+            border: 1px solid #eaeaea;
+        }
+
+        .work-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .work-content {
+            padding: 0;
+        }
+
+        .work-content h3 {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .work-meta {
+            font-size: 12px;
+            color: #7a8896;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: #fafbfc;
+            padding: 2.5rem;
+            border-radius: 4px;
+        }
+
+        .process-step h3 {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid #d1d5db;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .testimonial p {
+            font-family: 'Lora', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-credit {
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+
+        /* Connect Section */
+        .connect {
+            padding: 4rem 0;
+            background: white;
+            border-top: 1px solid #d1d5db;
+        }
+
+        /* FAQs */
+        .faqs {
+            padding: 4rem 5%;
+            background: white;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            font-size: 15px;
+            color: #5a6c7d;
+            line-height: 1.8;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            background: #0a1729;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capabilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .craft-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 12px;
+            }
+
+            .hero-main {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAV -->
+<!-- Navigation -->
 <nav>
-<div>Sakthi</div>
-<ul>
-<li><a href="#">Work</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+    <a href="#" class="logo">by Bramma Sakthi</a>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#process">Approach</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><button class="cta-button" onclick="document.getElementById('connect').scrollIntoView({behavior: 'smooth'})">Connect</button></li>
+    </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<h1 class="hero-main">
-I build products that bring clarity to complex problems.
-</h1>
-
-<div class="hero-cta">
-<button class="btn-primary">View Work</button>
-<button class="btn-secondary">Connect</button>
-</div>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <h1 class="hero-main">I build products that turn messy workflows into scalable systems.</h1>
+    <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('works').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+        <button class="btn-secondary" onclick="document.getElementById('connect').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
+    </div>
 </section>
 
-<!-- INTRO -->
-<section>
-<div class="intro-grid">
-
-<div>
-<h2>Hello, I’m Sakthi</h2>
-<p>A product-minded builder focused on real-world execution.</p>
-
-<h3>Builder</h3>
-<p>I build products that turn fragmented processes into scalable systems.</p>
-
-<h3>Bridge</h3>
-<p>I connect business, users, and engineering to move work forward.</p>
-
-<h3>Craft</h3>
-<p>I care about how systems work and how the experience feels — so the result is simple, reliable, and actually used.</p>
-</div>
-
-<img src="images/Profile_pic_professional.jpg">
-
-</div>
+<!-- Intro Section -->
+<section class="intro">
+    <div style="display: grid; grid-template-columns: 1fr 280px; gap: 6rem; align-items: flex-start;">
+        <div>
+            <h2 style="font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: #0f172a; line-height: 1.6; margin-bottom: 1.8rem;"><strong>Hello, I'm Sakthi</strong> — a product-minded builder. I work at the intersection of user needs, business goals, and technical systems, designing products that are not just built, but actually used.</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.2rem;">
+                <div>
+                    <h3 style="font-family: 'Lora', serif; font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 0.4rem;">Builder</h3>
+                    <p style="font-size: 13px; color: #5a6c7d; line-height: 1.7;">I design and build products that transform fragmented processes into structured, scalable solutions.</p>
+                </div>
+                <div>
+                    <h3 style="font-family: 'Lora', serif; font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 0.4rem;">Bridge</h3>
+                    <p style="font-size: 13px; color: #5a6c7d; line-height: 1.7;">I connect business, user, and technical perspectives to align teams and move from ambiguity to clarity.</p>
+                </div>
+                <div>
+                    <h3 style="font-family: 'Lora', serif; font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 0.4rem;">Craft</h3>
+                    <p style="font-size: 13px; color: #5a6c7d; line-height: 1.7;">I care about how systems work and how the experience feels, so what we ship is simple, reliable, and adopted in practice.</p>
+                </div>
+            </div>
+        </div>
+        <div style="flex-shrink: 0;">
+            <img src="images/Profile_pic_professional.jpg" alt="Sakthi" style="width: 280px; height: 280px; border-radius: 8px; object-fit: cover;">
+        </div>
+    </div>
 </section>
 
-<!-- CAPABILITIES -->
-<section>
-<h2>Where I’m most useful</h2>
-
-<div class="capabilities-grid">
-
-<div>
-<h3>Product Strategy & Delivery</h3>
-<p>Turning high-level goals into shipped products.</p>
-</div>
-
-<div>
-<h3>Product UX & Systems</h3>
-<p>Bringing clarity to complex ideas.</p>
-</div>
-
-<div>
-<h3>Data & Insights</h3>
-<p>Turning data into product decisions.</p>
-</div>
-
-<div>
-<h3>Workflows & Tools</h3>
-<p>Designing scalable systems that reduce friction.</p>
-</div>
-
-</div>
+<!-- Capabilities Section -->
+<section class="capabilities">
+    <div style="padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        <div style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Capabilities</div>
+        <h2 style="font-family: 'Lora', serif; font-size: 36px; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem;">Where I'm most useful.</h2>
+        <h3 style="font-family: 'Lora', serif; font-size: 20px; font-weight: 600; color: #0f172a; margin-bottom: 3rem;">Most of my work falls into a few patterns. If you see yourself in one of these, we should talk.</h3>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <div style="background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 2rem;">
+                <h3 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 1rem;">Product Strategy & Delivery</h3>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8; margin-bottom: 0.75rem;"><strong>When you need to turn high-level goals into shipped products.</strong></p>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8;">I bring clarity to goals, align teams across business and engineering, and drive work from concept to delivery, focusing on products that are not just built, but actually used.</p>
+            </div>
+            <div style="background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 2rem;">
+                <h3 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 1rem;">Product UX & Systems</h3>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8; margin-bottom: 0.75rem;"><strong>When ideas are unclear or complex.</strong></p>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8;">I define flows, structure, and user experience so teams can move from fuzzy concepts to usable products that handle real-world complexity.</p>
+            </div>
+            <div style="background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 2rem;">
+                <h3 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 1rem;">Data & Product Insights</h3>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8; margin-bottom: 0.75rem;"><strong>When data exists but lacks clarity.</strong></p>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8;">I analyze and structure data to improve customer experience and product decisions from identifying product issues to enabling better operational visibility.</p>
+            </div>
+            <div style="background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 2rem;">
+                <h3 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 1rem;">Workflows & Tools</h3>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8; margin-bottom: 0.75rem;"><strong>When work is slowed down by manual processes.</strong></p>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.8;">I design systems and workflows that reduce friction, improve consistency, and make day-to-day work easier and more scalable.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- TESTIMONIAL -->
+
+<section class="competencies-scroll">
+    <div class="competencies-wrapper" id="competenciesScroll">
+        <div class="competency-tag">Product Strategy & Execution</div>
+        <div class="competency-tag">Workflow Design & Systems</div>
+        <div class="competency-tag">Data & Process Automation</div>
+        <div class="competency-tag">Hackathon & Rapid Prototyping</div>
+        <div class="competency-tag">Power Apps & SharePoint</div>
+        <div class="competency-tag">Python & Data Processing</div>
+        <!-- Duplicate for infinite scroll effect -->
+        <div class="competency-tag">Product Strategy & Execution</div>
+        <div class="competency-tag">Workflow Design & Systems</div>
+        <div class="competency-tag">Data & Process Automation</div>
+        <div class="competency-tag">Hackathon & Rapid Prototyping</div>
+        <div class="competency-tag">Power Apps & SharePoint</div>
+        <div class="competency-tag">Python & Data Processing</div>
+    </div>
+</section>
+
+<!-- Testimonial -->
 <section class="testimonial">
-<p>
-"Sakthi led a complex, cross-functional project with clarity and ownership, delivering real value."
-</p>
+    <p>"Sakthi consistently brings clarity to complex problems, aligns stakeholders, and delivers solutions that create real value."</p>
+    <p class="testimonial-credit">— Parvaty Suresh, Program Manager</p>
 </section>
 
-<!-- CONNECT -->
-<section style="text-align:center">
-<h2>Connect</h2>
+<!-- Works Section -->
+<section class="works" id="works">
+    <div class="section-header">
+        <h2>Selected Works</h2>
+        <p>What this looks like in practice.</p>
+    </div>
+    <div class="works-grid">
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Turning fragmented data into a $700k capital recovery.</h3>
+                        <p class="work-meta">TCCI Manufacturing • Finance Operations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Finance teams had years of import/export data scattered across folders. $700K in eligible duty drawback refunds sat unclaimed because the data wasn't organized.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Built a 4-stage data pipeline: OCR extraction, standardized formatting, Python-based cleaning, and automated government submission. Understood the real bottleneck wasn't filing—it was data structure.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Recovered $700K in the first claim ever filed. Created a repeatable system that scales across countries and time periods.</p>
+            </div>
+        </div>
 
-<div class="social-links">
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Ending the era of paper-based operations.</h3>
+                        <p class="work-meta">TCCI Manufacturing • Operations Systems</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Operations across production, quality, and warehouse were paper-based. Data was fragmented, reporting was delayed, and management had no visibility into what was happening.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Interviewed stakeholders across all teams. Designed standardized data capture. Built multiple Power Apps with SharePoint as data layer and Power Automate for workflow automation.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Digitized 80%+ of operational processes. Reduced manual effort. Enabled real-time visibility without relying on manual status updates.</p>
+            </div>
+        </div>
 
-<a href="https://linkedin.com">
-<img src="linkedin-svgrepo-com.svg">
-</a>
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Turning low ratings into product improvements.</h3>
+                        <p class="work-meta">Amazon • Fire TV Cube • Post-launch quality</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">After Fire TV Cube launched, customer ratings dropped. Feedback was scattered across thousands of reviews with no clear signal on what was driving the decline.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Analyzed large volumes of customer reviews to identify patterns and separate recurring issues from one-off complaints. Reproduced reported issues to validate root causes and ensure findings reflected real user problems. Identified a firmware mismatch issue — remotes with older firmware were failing to pair with devices running the latest OS — creating high-friction setup. Mapped the issue to the onboarding journey, identifying it as a critical failure point in first-time user experience.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Enabled teams to prioritize fixes including firmware updates and replacement remotes for affected users. Helped resolve a key source of customer frustration and contributed to improving product ratings from 3.0 to 4.0+.</p>
+            </div>
+        </div>
 
-<a href="https://medium.com">
-<img src="medium-svgrepo-com.svg">
-</a>
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Catching what matters before users do.</h3>
+                        <p class="work-meta">Amazon • Fire TV • Release quality</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Product releases often carried issues that only surfaced after launch, impacting customer experience and increasing post-release fixes.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Led cross-team bug bash sessions and coordinated beta testing to identify high-impact issues before release. Defined focus areas for testing based on product changes and user impact, ensuring teams prioritized what mattered most. Worked with engineering teams to translate findings into actionable fixes before launch.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Improved release readiness by surfacing critical issues earlier in the development cycle. Reduced post-release defects and enabled more informed release decisions.</p>
+            </div>
+        </div>
 
-<a href="https://tableau.com">
-<img src="tableau-icon-svgrepo-com.svg">
-</a>
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Making mentorship less dependent on luck.</h3>
+                        <p class="work-meta">Women in Product Hackathon 2026 • 🏆 Winner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Existing mentorship platforms match on surface criteria (company, industry) while ignoring what actually determines great mentorship: aligned goals and compatible experience levels.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Conducted user research with 10+ mentors and mentees. Designed a matching framework that asks the right questions. Built a functional prototype in one week.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Won the hackathon. Selected for community implementation. Proved that thoughtful product thinking beats feature shipping.</p>
+            </div>
+        </div>
 
-</div>
+        <div class="work-card" onclick="toggleWork(this)">
+            <div class="work-content">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <span class="work-toggle">+</span>
+                    <div style="flex: 1;">
+                        <h3>Making approvals move at the speed of work.</h3>
+                        <p class="work-meta">TCCI Manufacturing • Process Design</p>
+                    </div>
+                </div>
+            </div>
+            <div class="work-expanded" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; margin-left: 2rem;">
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">The Problem</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Work requests lived in Microsoft Planner with no standardized format. Approvals took 3-5 days. Management had zero visibility. Teams were frustrated.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">What I Did</h4>
+                <p style="font-size: 14px; color: #5a6c7d; margin-bottom: 1rem; line-height: 1.7;">Designed a workflow-driven system with structured intake, approval gates, and real-time visibility. Used Power Apps, SharePoint, and Power Automate to enforce process discipline.</p>
+                <h4 style="font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 0.75rem;">Impact</h4>
+                <p style="font-size: 14px; color: #5a6c7d; line-height: 1.7;">Approval time dropped 60% (3-5 days → 1-2 days). Manual follow-ups reduced 80%. Management now sees real-time status without asking.</p>
+            </div>
+        </div>
+    </div>
 </section>
+
+<!-- Process Section -->
+<section class="process" id="process">
+    <div class="section-header">
+        <h2>Working Together</h2>
+        <p>How I usually plug in.</p>
+    </div>
+    <div class="process-grid">
+        <div class="process-step">
+            <h3>1. Listen & Diagnose</h3>
+            <p>It starts with what hurts. You walk me through the workflow, product, or system, and I talk with the people closest to the work. Together we map what's actually broken and what we're really solving.</p>
+        </div>
+        <div class="process-step">
+            <h3>2. Design & Prototype</h3>
+            <p>I turn that understanding into clear structures, flows, and designs. Prototypes, system diagrams, or Figma—at the right fidelity so we can react to something concrete and decide together.</p>
+        </div>
+        <div class="process-step">
+            <h3>3. Build & Refine</h3>
+            <p>Once we like a direction, I stay involved through the first versions. We get it built, add measurement so we learn from it, and refine based on how real people actually use it.</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 0 5%; max-width: 1400px; margin-left: auto; margin-right: auto;">
+        <button class="btn-primary" onclick="document.getElementById('connect').scrollIntoView({behavior: 'smooth'})">Ways to Connect</button>
+    </div>
+</section>
+
+<!-- Second Testimonial -->
+<section class="testimonial">
+    <p>"Sakthi thrives in ambiguous situations, takes initiative, and consistently delivers high-quality results."</p>
+    <p class="testimonial-credit">— Jameela Hamjath, Senior QA Leader, Amazon</p>
+</section>
+
+<!-- Well you made it to the bottom CTA -->
+<section style="padding: 3rem 5%; background: white; text-align: center; max-width: 1400px; margin: 0 auto; border-top: 1px solid #d1d5db;">
+    <h2 style="font-family: 'Lora', serif; font-size: 42px; font-weight: 600; color: #0f172a; margin-bottom: 1rem;">Well, you made it to the bottom of the page?</h2>
+    <p style="font-size: 18px; color: #5a6c7d; margin-bottom: 2rem;">Now you want to click "Hire Me"</p>
+    <button class="btn-primary" onclick="document.getElementById('connect').scrollIntoView({behavior: 'smooth'})" style="padding: 14px 40px; font-size: 16px;">Hire Me</button>
+</section>
+
+<!-- Connect Section -->
+<section class="connect" id="connect">
+    <div style="padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        <div style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">Let's Connect 👋</div>
+        
+        <!-- Contact Form -->
+        <div style="background: white; border: 1px solid #3b82f6; border-radius: 8px; padding: 2rem; margin-bottom: 3rem;">
+            <p style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 1.5rem; font-style: italic;">Let's start simple...</p>
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0f172a; margin-bottom: 0.5rem;">Name</label>
+                <input type="text" placeholder="Jane Smith" style="width: 100%; padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0f172a; margin-bottom: 0.5rem;">Email</label>
+                <input type="email" placeholder="your@email.com" style="width: 100%; padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-size: 14px; font-weight: 500; color: #0f172a; margin-bottom: 0.5rem;">What's going on?</label>
+                <textarea placeholder="What are you hoping I can help with?" style="width: 100%; padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 4px; font-size: 14px; min-height: 100px; font-family: inherit;"></textarea>
+            </div>
+            <button class="btn-primary" style="width: 100%;">Send It</button>
+            <p style="font-size: 12px; color: #5a6c7d; margin-top: 1rem; font-style: italic;">I'll review your message and get back to you within 24 hours.</p>
+        </div>
+
+        <!-- Separator -->
+        <div style="border-top: 1px solid #d1d5db; margin: 2rem 0;"></div>
+
+        <!-- Direct Contact -->
+        <div style="margin-top: 3rem;">
+            <p style="font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 2rem; font-style: italic;">To know more about me...</p>
+            <div style="display: flex; justify-content: center; gap: 3rem;">
+                <a href="https://www.linkedin.com/in/brammasakthi/" target="_blank" title="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <img src="linkedin-logo.png" alt="LinkedIn" style="width: 50px; height: 50px; object-fit: contain;">
+                </a>
+                <a href="https://medium.com/@brammasakthip" target="_blank" title="Medium" style="display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <img src="medium-logo.png" alt="Medium" style="width: 50px; height: 50px; object-fit: contain;">
+                </a>
+                <a href="https://public.tableau.com/app/profile/bramma.sakthi.panneerkai.perumal/vizzes" target="_blank" title="Tableau" style="display: inline-flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                    <img src="tableau-logo.png" alt="Tableau" style="width: 50px; height: 50px; object-fit: contain;">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQs Section -->
+<section class="faqs" id="faqs">
+    <div class="section-header">
+        <h2>FAQs</h2>
+        <p>Questions people usually ask.</p>
+    </div>
+    <div style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ When does working together make sense?</div>
+            <div class="faq-answer">
+                <p>When your team is solving complex product problems — especially where user needs, business goals, and technical constraints need to come together into a clear, shippable solution. I'm most effective in environments where clarity, prioritization, and execution drive outcomes.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ What industries have you worked with?</div>
+            <div class="faq-answer">
+                <p>I've worked across e-commerce and manufacturing, with experience spanning customer experience, finance, and operations. In e-commerce, I worked on Fire TV, focusing on improving customer experience. In manufacturing, I worked across multiple business areas, collaborating with teams like purchasing, production, finance, and engineering. This has helped me understand how different parts of a business connect and allows me to quickly adapt and define the right problems to solve.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ How do you usually work with teams?</div>
+            <div class="faq-answer">
+                <p>I work closely with engineering, design, and business teams to understand user needs, align stakeholders on the problem, and define what to build. I translate insights into clear requirements, prioritize effectively, and drive execution through delivery.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ What kind of problems do you typically solve?</div>
+            <div class="faq-answer">
+                <p>I focus on problems where user experience is unclear, systems are fragmented, or decisions lack clarity. I work on simplifying experiences, improving decision-making, and delivering products that create measurable impact.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ What about emerging tech and AI?</div>
+            <div class="faq-answer">
+                <p>I've been building with AI in different forms for a while — from working with unstructured data to exploring LLM-based tools. Right now, I'm focused on how AI can improve how users interact with information, making it easier to understand, search, and act on. I experiment with patterns like structuring messy data, enabling natural language exploration, and building lightweight copilots that reduce friction. This builds on my earlier experience of turning unstructured data into usable insights for decision-making — something I now see AI accelerating significantly. Recently, I've been prototyping a "Family OS" concept that integrates Slack and email to simplify day-to-day coordination. I focus on using AI where it creates real, practical value.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">+ How can I contact you?</div>
+            <div class="faq-answer">
+                <p>You can reach out via email or LinkedIn. I'll review your message and get back to you within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Bramma Sakthi. I build products that turn messy workflows into scalable systems.</p>
+    <p>
+        <a href="https://www.linkedin.com/in/brammasakthi/" target="_blank">LinkedIn</a> • 
+        <a href="https://github.com/brammap" target="_blank">GitHub</a> • 
+        <a href="mailto:brammasakthip@gmail.com">Email</a>
+    </p>
+</footer>
+
+<script>
+function toggleFaq(element) {
+    const answer = element.nextElementSibling;
+    const isOpen = answer.classList.contains('show');
+    
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+    document.querySelectorAll('.faq-question').forEach(q => q.textContent = q.textContent.replace('−', '+'));
+    
+    if (!isOpen) {
+        answer.classList.add('show');
+        element.textContent = element.textContent.replace('+', '−');
+    }
+}
+</script>
 
 </body>
 </html>
+
+<style>
+.work-toggle {
+    font-size: 28px;
+    font-weight: 300;
+    color: #0f172a;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.work-card.expanded .work-toggle {
+    transform: rotate(45deg);
+}
+</style>
+
+<script>
+function toggleWork(element) {
+    const expanded = element.querySelector('.work-expanded');
+    element.classList.toggle('expanded');
+    
+    if (expanded.style.display === 'none') {
+        expanded.style.display = 'block';
+    } else {
+        expanded.style.display = 'none';
+    }
+}
+</script>

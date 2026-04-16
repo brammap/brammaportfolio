@@ -10,79 +10,100 @@
 
 <style>
 
-/* ===== BASE ===== */
+/* ===== RESET ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    font-family:'Inter',sans-serif;
-    background:#ffffff;
-    color:#1e293b;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    background: #ffffff;
 }
 
+/* ===== GLOBAL ===== */
 section {
-    padding:6rem 5%;
+    padding: 7rem 6%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #64748b;
 }
 
 /* ===== NAV ===== */
 nav {
     display:flex;
     justify-content:space-between;
-    padding:2rem 5%;
-    border-bottom:1px solid #e5e7eb;
-}
-
-nav ul {
-    display:flex;
-    gap:2rem;
-    list-style:none;
+    padding:2rem 6%;
 }
 
 nav a {
     text-decoration:none;
-    font-size:14px;
     color:#1e293b;
+    font-size:14px;
 }
 
 /* ===== HERO ===== */
 .hero {
-    padding:8rem 5%;
     text-align:center;
+    padding-top:8rem;
 }
 
-.hero-main {
-    font-family:'Lora',serif;
-    font-size:64px;
-    line-height:1.1;
-    max-width:800px;
-    margin:auto;
+.hero p {
+    margin-top:1.5rem;
+    font-size:18px;
 }
 
-.hero-cta {
+.hero-buttons {
     margin-top:2rem;
     display:flex;
-    gap:1rem;
     justify-content:center;
+    gap:1rem;
 }
 
-.btn-primary {
-    background:#0f172a;
-    color:white;
+button {
     padding:12px 28px;
     border-radius:25px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.primary {
+    background:#0f172a;
+    color:white;
     border:none;
 }
 
-.btn-secondary {
+.secondary {
     border:2px solid #0f172a;
-    padding:12px 28px;
-    border-radius:25px;
+    background:transparent;
 }
 
 /* ===== INTRO ===== */
-.intro-grid {
+.intro {
     display:grid;
-    grid-template-columns:1fr 260px;
-    gap:4rem;
+    grid-template-columns:1fr 280px;
+    gap:5rem;
     align-items:center;
 }
 
@@ -93,34 +114,38 @@ nav a {
     border-radius:12px;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h2 {
-    font-family:'Lora',serif;
-    font-size:42px;
-    margin-bottom:1rem;
-}
-
-h3 {
-    font-family:'Lora',serif;
-    font-size:18px;
-    margin-top:1.5rem;
-}
-
-p {
-    font-size:15px;
-    line-height:1.8;
-    color:#64748b;
-}
-
 /* ===== CAPABILITIES ===== */
-.capabilities-grid {
+.capabilities {
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:3rem;
+    gap:4rem;
 }
 
-.capability-card {
-    padding:0;
+.capability h3 {
+    margin-bottom:0.5rem;
+}
+
+/* ===== WORKS ===== */
+.works h2 {
+    margin-bottom:3rem;
+}
+
+.work {
+    margin-bottom:3rem;
+}
+
+.work h3 {
+    font-size:22px;
+    margin-bottom:0.3rem;
+}
+
+.work small {
+    color:#94a3b8;
+    font-size:13px;
+}
+
+.work p {
+    margin-top:0.5rem;
 }
 
 /* ===== TESTIMONIAL ===== */
@@ -136,29 +161,33 @@ p {
 }
 
 /* ===== SOCIAL ===== */
-.social-links {
+.social {
+    text-align:center;
+}
+
+.icons {
+    margin-top:2rem;
     display:flex;
     justify-content:center;
     gap:3rem;
-    margin-top:2rem;
 }
 
-.social-links img {
+.icons img {
     width:36px;
     opacity:0.8;
     transition:0.2s;
 }
 
-.social-links img:hover {
-    transform:scale(1.15);
+.icons img:hover {
     opacity:1;
+    transform:scale(1.15);
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px) {
-    .hero-main { font-size:36px; }
-    .intro-grid { grid-template-columns:1fr; }
-    .capabilities-grid { grid-template-columns:1fr; }
+    h1 { font-size:36px; }
+    .intro { grid-template-columns:1fr; }
+    .capabilities { grid-template-columns:1fr; }
 }
 
 </style>
@@ -169,29 +198,25 @@ p {
 <!-- NAV -->
 <nav>
 <div>Sakthi</div>
-<ul>
-<li><a href="#">Work</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+<div>
+<a href="#">Work</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<h1 class="hero-main">
-I build products that bring clarity to complex problems.
-</h1>
+<h1>I build products that bring clarity to complex problems.</h1>
 
-<div class="hero-cta">
-<button class="btn-primary">View Work</button>
-<button class="btn-secondary">Connect</button>
+<p>I turn ambiguity into structured solutions and ship products that create real impact.</p>
+
+<div class="hero-buttons">
+<button class="primary">View Work</button>
+<button class="secondary">Connect</button>
 </div>
 </section>
 
 <!-- INTRO -->
-<section>
-<div class="intro-grid">
-
+<section class="intro">
 <div>
 <h2>Hello, I’m Sakthi</h2>
 <p>A product-minded builder focused on real-world execution.</p>
@@ -207,32 +232,30 @@ I build products that bring clarity to complex problems.
 </div>
 
 <img src="images/Profile_pic_professional.jpg">
-
-</div>
 </section>
 
 <!-- CAPABILITIES -->
 <section>
 <h2>Where I’m most useful</h2>
 
-<div class="capabilities-grid">
+<div class="capabilities">
 
-<div>
+<div class="capability">
 <h3>Product Strategy & Delivery</h3>
 <p>Turning high-level goals into shipped products.</p>
 </div>
 
-<div>
+<div class="capability">
 <h3>Product UX & Systems</h3>
 <p>Bringing clarity to complex ideas.</p>
 </div>
 
-<div>
+<div class="capability">
 <h3>Data & Insights</h3>
 <p>Turning data into product decisions.</p>
 </div>
 
-<div>
+<div class="capability">
 <h3>Workflows & Tools</h3>
 <p>Designing scalable systems that reduce friction.</p>
 </div>
@@ -240,32 +263,45 @@ I build products that bring clarity to complex problems.
 </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="testimonial">
-<p>
-"Sakthi led a complex, cross-functional project with clarity and ownership, delivering real value."
-</p>
+<!-- WORKS -->
+<section class="works">
+<h2>Selected Work</h2>
+
+<div class="work">
+<h3>Unlocking $700K hidden in plain sight</h3>
+<small>TCCI • Finance</small>
+<p>Fragmented data made it impossible to claim refunds. I built a system to structure it, enabling $700K recovery.</p>
+</div>
+
+<div class="work">
+<h3>Breaking free from paper-driven operations</h3>
+<small>TCCI • Operations</small>
+<p>Manual processes slowed teams. I redesigned workflows to digitize 80% of operations.</p>
+</div>
+
+<div class="work">
+<h3>Why customers were leaving — and how we fixed it</h3>
+<small>Amazon • Fire TV</small>
+<p>Analyzed reviews to uncover issues, improving ratings from 3.0 to 4.0+.</p>
+</div>
+
 </section>
 
-<!-- CONNECT -->
-<section style="text-align:center">
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+<p>"Sakthi led a complex project with clarity and delivered real value."</p>
+</section>
+
+<!-- SOCIAL -->
+<section class="social">
 <h2>Connect</h2>
 
-<div class="social-links">
-
-<a href="https://linkedin.com">
+<div class="icons">
 <img src="linkedin-svgrepo-com.svg">
-</a>
-
-<a href="https://medium.com">
 <img src="medium-svgrepo-com.svg">
-</a>
-
-<a href="https://tableau.com">
 <img src="tableau-icon-svgrepo-com.svg">
-</a>
-
 </div>
+
 </section>
 
 </body>

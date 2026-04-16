@@ -3,52 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bramma Sakthi | Product Manager</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Sakthi | Product Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* ===== BASE ===== */
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
     font-family:'Inter',sans-serif;
-    background:#fafbfc;
-    color:#2c3e50;
+    background:#ffffff;
+    color:#1e293b;
 }
 
-/* NAV */
+section {
+    padding:6rem 5%;
+}
+
+/* ===== NAV ===== */
 nav {
     display:flex;
     justify-content:space-between;
     padding:2rem 5%;
-    background:white;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid #e5e7eb;
 }
 
-nav ul { display:flex; gap:2rem; list-style:none; }
+nav ul {
+    display:flex;
+    gap:2rem;
+    list-style:none;
+}
 
-nav a { text-decoration:none; color:#2c3e50; font-size:14px; }
+nav a {
+    text-decoration:none;
+    font-size:14px;
+    color:#1e293b;
+}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-    padding:6rem 5%;
+    padding:8rem 5%;
     text-align:center;
-    background:white;
 }
 
 .hero-main {
     font-family:'Lora',serif;
-    font-size:52px;
-    font-weight:600;
-    max-width:900px;
+    font-size:64px;
+    line-height:1.1;
+    max-width:800px;
     margin:auto;
 }
 
 .hero-cta {
     margin-top:2rem;
     display:flex;
-    justify-content:center;
     gap:1rem;
+    justify-content:center;
 }
 
 .btn-primary {
@@ -65,12 +78,7 @@ nav a { text-decoration:none; color:#2c3e50; font-size:14px; }
     border-radius:25px;
 }
 
-/* INTRO */
-.intro {
-    padding:4rem 5%;
-    background:white;
-}
-
+/* ===== INTRO ===== */
 .intro-grid {
     display:grid;
     grid-template-columns:1fr 260px;
@@ -81,51 +89,53 @@ nav a { text-decoration:none; color:#2c3e50; font-size:14px; }
 .intro img {
     width:260px;
     height:260px;
-    border-radius:12px;
     object-fit:cover;
-    display:block;
-    margin:auto;
+    border-radius:12px;
 }
 
-/* CAPABILITIES */
-.capabilities {
-    padding:4rem 5%;
-    background:#fafbfc;
+/* ===== TYPOGRAPHY ===== */
+h2 {
+    font-family:'Lora',serif;
+    font-size:42px;
+    margin-bottom:1rem;
 }
 
+h3 {
+    font-family:'Lora',serif;
+    font-size:18px;
+    margin-top:1.5rem;
+}
+
+p {
+    font-size:15px;
+    line-height:1.8;
+    color:#64748b;
+}
+
+/* ===== CAPABILITIES ===== */
 .capabilities-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:2rem;
+    gap:3rem;
 }
 
 .capability-card {
-    background:white;
-    padding:2rem;
-    border:1px solid #ddd;
-    border-radius:8px;
+    padding:0;
 }
 
-/* TESTIMONIAL */
+/* ===== TESTIMONIAL ===== */
 .testimonial {
     text-align:center;
-    padding:4rem 5%;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
 }
 
 .testimonial p {
     font-family:'Lora',serif;
-    font-size:20px;
-    font-style:italic;
+    font-size:26px;
+    max-width:700px;
+    margin:auto;
 }
 
-.testimonial-credit {
-    margin-top:1rem;
-    font-size:14px;
-}
-
-/* SOCIAL ICONS */
+/* ===== SOCIAL ===== */
 .social-links {
     display:flex;
     justify-content:center;
@@ -134,127 +144,124 @@ nav a { text-decoration:none; color:#2c3e50; font-size:14px; }
 }
 
 .social-links img {
-    width:38px;
-    height:38px;
-    transition:transform 0.2s ease;
+    width:36px;
+    opacity:0.8;
+    transition:0.2s;
 }
 
 .social-links img:hover {
     transform:scale(1.15);
+    opacity:1;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
+/* ===== MOBILE ===== */
+@media(max-width:768px) {
+    .hero-main { font-size:36px; }
     .intro-grid { grid-template-columns:1fr; }
     .capabilities-grid { grid-template-columns:1fr; }
-    .hero-main { font-size:36px; }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-<a href="#">by Bramma Sakthi</a>
+<div>Sakthi</div>
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Capabilities</a></li>
-<li><a href="#">Works</a></li>
+<li><a href="#">Work</a></li>
+<li><a href="#">About</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
 <h1 class="hero-main">
-I build products that turn complex problems into simple, scalable systems.
+I build products that bring clarity to complex problems.
 </h1>
 
 <div class="hero-cta">
-<button class="btn-primary">View My Work</button>
-<button class="btn-secondary">Let's Connect</button>
+<button class="btn-primary">View Work</button>
+<button class="btn-secondary">Connect</button>
 </div>
 </section>
 
-<section class="intro">
+<!-- INTRO -->
+<section>
 <div class="intro-grid">
 
 <div>
-<h2>Hello, I’m Sakthi — a product-minded builder.</h2>
-<p>I design products that are not just built, but actually used.</p>
-
-<br>
+<h2>Hello, I’m Sakthi</h2>
+<p>A product-minded builder focused on real-world execution.</p>
 
 <h3>Builder</h3>
-<p>I build scalable solutions from fragmented processes.</p>
+<p>I build products that turn fragmented processes into scalable systems.</p>
 
 <h3>Bridge</h3>
-<p>I connect business, users, and engineering.</p>
+<p>I connect business, users, and engineering to move work forward.</p>
 
 <h3>Craft</h3>
 <p>I care about how systems work and how the experience feels — so the result is simple, reliable, and actually used.</p>
 </div>
 
-<img src="images/Profile_pic_professional.jpg" alt="Sakthi">
+<img src="images/Profile_pic_professional.jpg">
 
 </div>
 </section>
 
-<section class="capabilities">
-<h2>Where I'm most useful</h2>
+<!-- CAPABILITIES -->
+<section>
+<h2>Where I’m most useful</h2>
 
 <div class="capabilities-grid">
 
-<div class="capability-card">
+<div>
 <h3>Product Strategy & Delivery</h3>
-<p><strong>When goals need to become shipped products.</strong></p>
-<p>I drive execution from idea to delivery.</p>
+<p>Turning high-level goals into shipped products.</p>
 </div>
 
-<div class="capability-card">
+<div>
 <h3>Product UX & Systems</h3>
-<p><strong>When ideas are unclear or complex.</strong></p>
-<p>I define structure and flows for usable products.</p>
+<p>Bringing clarity to complex ideas.</p>
 </div>
 
-<div class="capability-card">
-<h3>Data & Product Insights</h3>
-<p><strong>When data lacks clarity.</strong></p>
-<p>I turn data into actionable insights.</p>
+<div>
+<h3>Data & Insights</h3>
+<p>Turning data into product decisions.</p>
 </div>
 
-<div class="capability-card">
+<div>
 <h3>Workflows & Tools</h3>
-<p><strong>When work is slowed by manual processes.</strong></p>
-<p>I design scalable systems that reduce friction.</p>
+<p>Designing scalable systems that reduce friction.</p>
 </div>
 
 </div>
 </section>
 
+<!-- TESTIMONIAL -->
 <section class="testimonial">
-<p>"Sakthi led a complex, cross-functional project with clarity and ownership, keeping stakeholders aligned and delivering real value."</p>
-<p class="testimonial-credit">— Parvaty Suresh, Program Manager</p>
+<p>
+"Sakthi led a complex, cross-functional project with clarity and ownership, delivering real value."
+</p>
 </section>
 
-<section class="testimonial">
-<p>"Sakthi thrives in ambiguity, takes initiative, and consistently delivers high-quality results."</p>
-<p class="testimonial-credit">— Jameela Hamjath, Senior QA Leader</p>
-</section>
-
-<section style="text-align:center; padding:3rem;">
+<!-- CONNECT -->
+<section style="text-align:center">
 <h2>Connect</h2>
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/brammasakthi/" target="_blank">
+<a href="https://linkedin.com">
 <img src="linkedin-svgrepo-com.svg">
 </a>
 
-<a href="https://medium.com/@brammasakthip" target="_blank">
+<a href="https://medium.com">
 <img src="medium-svgrepo-com.svg">
 </a>
 
-<a href="https://public.tableau.com/" target="_blank">
+<a href="https://tableau.com">
 <img src="tableau-icon-svgrepo-com.svg">
 </a>
 

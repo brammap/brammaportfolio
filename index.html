@@ -1002,6 +1002,92 @@ chatInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') sendMessage();
 });
 </script>
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <div id="chatWidget" style="display: none; flex-direction: column; width: 380px; max-height: 80vh; background: white; border: 0.5px solid #e5e7eb; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); overflow: hidden;">
+    <div style="background: #0f172a; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+      <h3 style="margin: 0; font-size: 16px; font-weight: 500;">Ask Aura</h3>
+      <button id="closeChat" style="background: none; border: none; color: white; font-size: 18px; cursor: pointer; padding: 0; width: 24px; height: 24px;">×</button>
+    </div>
+    <div id="messages" style="flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #fafbfc; padding: 12px; border-radius: 8px; font-size: 14px; color: #2c3e50;">
+        Hi! I'm Sakthi's AI assistant. Ask me about her work, capabilities, or how to get in touch.
+      </div>
+    </div>
+    <div style="padding: 1rem; border-top: 0.5px solid #e5e7eb; display: flex; gap: 8px;">
+      <input id="chatInput" type="text" placeholder="Ask a question..." style="flex: 1; padding: 10px 12px; border: 0.5px solid #e5e7eb; border-radius: 8px; font-size: 14px;" />
+      <button id="sendBtn" style="background: #0f172a; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; font-weight: 500; font-size: 14px;">Send</button>
+    </div>
+  </div>
+  <button id="chatToggle" style="width: 56px; height: 56px; border-radius: 50%; background: #0f172a; color: white; border: none; font-size: 24px; cursor: pointer; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);">💬</button>
+</div>
 
+<script>
+var chatWidget = document.getElementById('chatWidget');
+var chatToggle = document.getElementById('chatToggle');
+var closeChat = document.getElementById('closeChat');
+var messagesDiv = document.getElementById('messages');
+var chatInput = document.getElementById('chatInput');
+var sendBtn = document.getElementById('sendBtn');
+var BACKEND_URL = 'http://localhost:3001';
+
+chatToggle.onclick = function() {
+  if (chatWidget.style.display === 'flex') {
+    chatWidget.style.display = 'none';
+  } else {
+    chatWidget.style.display = 'flex';
+  }
+};
+
+closeChat.onclick = function() {
+  chatWidget.style.display = 'none';
+};
+
+function sendMessage() {
+  var message = chatInput.value.trim();
+  if (!message) return;
+  
+  var userMsg = document.createElement('div');
+  userMsg.style.cssText = 'text-align: right; margin-left: auto; background: #0f172a; color: white; padding: 10px 12px; border-radius: 8px; font-size: 14px; max-width: 80%;';
+  userMsg.textContent = message;
+  messagesDiv.appendChild(userMsg);
+  
+  chatInput.value = '';
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  
+  var loadingMsg = document.createElement('div');
+  loadingMsg.style.cssText = 'background: #fafbfc; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: #7a8896;';
+  loadingMsg.textContent = 'Thinking...';
+  messagesDiv.appendChild(loadingMsg);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  
+  fetch(BACKEND_URL + '/api/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({message: message})
+  })
+  .then(function(response) { return response.json(); })
+  .then(function(data) {
+    messagesDiv.removeChild(loadingMsg);
+    var assistantMsg = document.createElement('div');
+    assistantMsg.style.cssText = 'background: #fafbfc; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: #2c3e50; max-width: 90%;';
+    assistantMsg.textContent = data.message;
+    messagesDiv.appendChild(assistantMsg);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
+    messagesDiv.removeChild(loadingMsg);
+    var errorMsg = document.createElement('div');
+    errorMsg.style.cssText = 'background: #fafbfc; padding: 10px 12px; border-radius: 8px; font-size: 14px; color: #2c3e50;';
+    errorMsg.textContent = 'Having trouble connecting. Feel free to reach out via the contact form instead!';
+    messagesDiv.appendChild(errorMsg);
+  });
+}
+
+sendBtn.onclick = function() { sendMessage(); };
+chatInput.onkeypress = function(e) { if (e.key === 'Enter') sendMessage(); };
+</script>
 </body>
 </html>
